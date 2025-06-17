@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="px-4 md:px-20 py-2 w-screen h-auto bg-blue-950">
+      <div className="px-4 md:px-20 py-4 w-screen h-auto bg-blue-950">
         <ul className='hidden md:flex justify-between text-white text-sm'>
           <li className="cursor-pointer hover:text-blue-200 transition-colors">HOME</li>
           <li className="cursor-pointer hover:text-blue-200 transition-colors">ABOUT US</li>
