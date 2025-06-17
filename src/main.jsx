@@ -4,6 +4,7 @@ import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NoPage from './pages/NoPage';
+import Faculties from './pages/Faculties';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path='*' element={ <NoPage /> } />
         <Route path='/' element={ <Home /> } />
+        <Route path="/faculties" element={ <Faculties/> }/>
       </Routes>
     </Router>
   </StrictMode>
