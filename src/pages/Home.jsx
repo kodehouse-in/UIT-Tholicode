@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Carousel from '../components/CarouselImg'
 import Section from '../components/Section'
 import Courses from '../components/Courses'
+import ChatBot from '../components/ChatBot'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Carousel/>
         <Section/>
         <Courses/>
+        <ChatBot />
       </div>
     </div>
   )
