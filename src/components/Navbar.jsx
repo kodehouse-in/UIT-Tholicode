@@ -1,70 +1,159 @@
-import React, { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import React, { useEffect, useRef } from 'react';
+import { Mail, Phone, X } from 'lucide-react';
+import { usePage } from '../contexts/PageContext';
+import { useNavigate } from 'react-router-dom';
+import { gsap } from 'gsap';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+const Navbar = ({ isMenuOpen, toggleMenu }) => {
+  const { page, setPage } = usePage();
+  const navigateTo = useNavigate();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+  const desktopNavRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const mobileMenuContentRef = useRef(null);
+  const mobileMenuItemsRef = useRef([]);
+
+  const menuItems = [
+    { label: 'HOME', value: '/' },
+    { label: 'ABOUT US', value: '/about-us' },
+    { label: 'ACADEMICS', value: 'academics' },
+    { label: 'FACULTIES', value: 'faculties' },
+    { label: 'INFRASTRUCTURE', value: 'infrastructure' },
+    { label: 'ADMISSION', value: 'admission' },
+    { label: 'CAREERS', value: 'careers' },
+    { label: 'CONTACT US', value: 'contact' },
+  ];
+
+  const handleNavigation = (item) => {
+    setPage(item.value);
+    navigateTo(`${item.value}`);
+    toggleMenu();
+  };
+
+  useEffect(() => {
+    if (desktopNavRef.current) {
+      gsap.fromTo(
+        desktopNavRef.current.children,
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.05, duration: 0.5, ease: 'power2.out' }
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mobileMenuRef.current && mobileMenuContentRef.current) {
+      const tl = gsap.timeline({ paused: true });
+
+      tl.to(mobileMenuRef.current, { opacity: 1, duration: 0.3, ease: 'power2.out' }, 0);
+
+      tl.to(
+        mobileMenuContentRef.current,
+        { x: 0, duration: 0.4, ease: 'power3.out' },
+        0
+      );
+
+      tl.fromTo(
+        [
+          mobileMenuContentRef.current.querySelector('.contact-info-section'),
+          mobileMenuItemsRef.current,
+        ],
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, stagger: 0.07, duration: 0.3, ease: 'power2.out' },
+        0.2
+      );
+
+      if (isMenuOpen) {
+        gsap.set(mobileMenuRef.current, { display: 'block', opacity: 0 });
+        gsap.set(mobileMenuContentRef.current, { x: '100%' });
+        tl.play();
+      } else {
+        tl.reverse();
+        tl.eventCallback('onReverseComplete', () => {
+          gsap.set(mobileMenuRef.current, { display: 'none' });
+        });
+      }
+    }
+  }, [isMenuOpen]);
 
   return (
     <div>
-      <div className="px-4 md:px-20 py-4 w-screen h-auto bg-blue-950">
-        <ul className='hidden md:flex justify-between text-white text-sm'>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">HOME</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">ABOUT US</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">ACADEMICS</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">FACULTIES</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">INFRASTRUCTURE</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">ADMISSION</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">CAREERS</li>
-          <li className="cursor-pointer hover:text-blue-200 transition-colors">CONTACT US</li>
+      <div className="hidden lg:block px-4 md:px-30 py-2 w-screen h-auto bg-gradient-to-r from-blue-950 to-neutral-900">
+        <ul className='flex justify-between text-white text-md font-semibold' ref={desktopNavRef}>
+          {menuItems.map((item) => (
+            <li
+              key={item.value}
+              className={`cursor-pointer transition-colors hover:text-blue-200 ${
+                page === item.value ? 'text-blue-200' : ''
+              }`}
+              onClick={() => handleNavigation(item)}
+            >
+              {item.label}
+            </li>
+          ))}
         </ul>
-
-        <div className="md:hidden flex justify-end">
-          <button 
-            onClick={toggleMenu}
-            className="text-white p-2 focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {isOpen && (
-          <div className="md:hidden absolute left-0 right-0 bg-blue-950 border-t border-blue-800 z-50">
-            <ul className="flex flex-col text-white text-sm">
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                HOME
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                ABOUT US
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                ACADEMICS
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                FACULTIES
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                INFRASTRUCTURE
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                ADMISSION
-              </li>
-              <li className="px-4 py-3 border-b border-blue-800 cursor-pointer hover:bg-blue-800 transition-colors">
-                CAREERS
-              </li>
-              <li className="px-4 py-3 cursor-pointer hover:bg-blue-800 transition-colors">
-                CONTACT US
-              </li>
-            </ul>
-          </div>
-        )}
       </div>
-    </div>
-  )
-}
 
-export default Navbar
+      {isMenuOpen && (
+        <div
+          ref={mobileMenuRef}
+          className="lg:hidden fixed inset-0 z-50 bg-black bg-opacity-50"
+          onClick={toggleMenu}
+          style={{ display: 'none', opacity: 0 }}
+        >
+          <div
+            ref={mobileMenuContentRef}
+            className="absolute top-0 right-0 w-80 max-w-sm h-full bg-white shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center p-4 border-b border-gray-200">
+              <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
+              <button
+                onClick={toggleMenu}
+                className="p-2 rounded-md hover:bg-gray-100"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="p-4 border-b border-gray-200 bg-gray-50 contact-info-section">
+              <h3 className="font-semibold text-gray-800 mb-3">Contact Us</h3>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="border-2 border-red-500 rounded-full p-1">
+                    <Mail className='text-red-500 size-4'/>
+                  </div>
+                  <p className='text-sm text-gray-700'>uittholicode@gmail.com</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="border-2 border-red-500 rounded-full p-1">
+                    <Phone className='text-red-500 size-4'/>
+                  </div>
+                  <p className='text-sm text-gray-700'>+99 9999999999</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-y-auto">
+              <ul className="py-2">
+                {menuItems.map((item, index) => (
+                  <li
+                    key={item.value}
+                    ref={(el) => (mobileMenuItemsRef.current[index] = el)}
+                    className={`px-4 py-3 cursor-pointer transition-colors hover:bg-blue-50 border-b border-gray-100 ${
+                      page === item.value ? 'bg-blue-100 text-blue-700 border-l-4 border-l-blue-500' : 'text-gray-700'
+                    }`}
+                    onClick={() => handleNavigation(item)}
+                  >
+                    {item.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Navbar;

@@ -28,8 +28,10 @@ export default function ChatBot() {
     } else if (input.toLowerCase().includes('bye')) {
       botReply = { from: 'bot', text: 'Goodbye! Have a nice day!' };
     } else if(input.toLowerCase().includes('who') && input.toLowerCase().includes('abhay')) {
-        botReply = { from: 'bot', text : 'He is a legend' }
-    }
+      botReply = { from: 'bot', text : 'He is a legend' }
+    } else if(input.toLowerCase().includes('which') && input.toLowerCase().includes('courses')) {
+      botReply = { from: 'bot', text : 'BSc Computer Science with AI and BCom Finance with minor computer' }
+    } 
 
     setMessages(prev => [...prev, userMessage, botReply]);
     setInput('');
@@ -39,12 +41,12 @@ export default function ChatBot() {
     <>
       {/* Floating button */}
       <div
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 p-3 rounded-full cursor-pointer shadow-lg animate-bounce"
+        className="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 p-3 rounded-full cursor-pointer shadow-lg animate-bounce"
         onMouseEnter={() => setShowModal(true)}
       >
         <MessageCircle className="text-white" />
         {botHi && (
-          <div className="absolute -left-10 -top-8 right-5 bg-white text-sm text-black px-2 py-3 rounded shadow">
+          <div className="absolute w-25 -top-11 right-8 bg-white text-sm text-black px-2 py-3 rounded shadow">
             {botHi}
           </div>
         )}
@@ -52,7 +54,7 @@ export default function ChatBot() {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed bottom-20 right-6 w-100 h-100 bg-white rounded-xl shadow-2xl flex flex-col overflow-x-auto">
+        <div className="fixed sm:bottom-20 bottom-21 sm:right-6 right-9 sm:w-100 w-80 h-100 bg-white rounded-xl shadow-2xl flex flex-col overflow-x-auto">
           {/* Header */}
           <div className="flex justify-between items-center bg-green-500 text-white p-2 rounded-t-xl">
             <span>ChatBot</span>
