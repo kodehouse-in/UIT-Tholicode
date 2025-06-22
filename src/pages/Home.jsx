@@ -6,6 +6,8 @@ import Section from '../components/Section'
 import { FaWhatsapp } from 'react-icons/fa'
 import ChatBot from '../components/ChatBot'
 import { usePage } from '../contexts/PageContext'
+import Footer from '../components/Footer'
+import Courses from '../components/Courses'
 
 export default function Home() {
   const { page, setPage } = usePage();
@@ -26,7 +28,9 @@ export default function Home() {
         <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <Carousel />
         <Section />
+        <Courses/>
         <ChatBot />
+        <Footer/>
       </div>
       
       <a

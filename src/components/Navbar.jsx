@@ -105,8 +105,7 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
             className="absolute top-0 right-0 w-80 max-w-sm h-full bg-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center p-4 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
+            <div className="flex justify-end items-center p-4 border-b border-gray-200">
               <button
                 onClick={toggleMenu}
                 className="p-2 rounded-md hover:bg-gray-100"
@@ -116,7 +115,7 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
             </div>
 
             <div className="p-4 border-b border-gray-200 bg-gray-50 contact-info-section">
-              <h3 className="font-semibold text-gray-800 mb-3">Contact Us</h3>
+              <h3 className="font-semibold text-gray-800 mb-3">Connect with us</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="border-2 border-red-500 rounded-full p-1">

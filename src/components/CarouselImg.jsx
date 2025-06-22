@@ -21,11 +21,10 @@ const CarouselImg = () => {
 
   const isFirstImage = currentIndex === 0;
 
-  // 🔁 Autoplay with 2s interval
   useEffect(() => {
     const interval = setInterval(goToNext, 10000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval); 
   }, [currentIndex]);
 
   return (

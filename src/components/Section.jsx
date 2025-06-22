@@ -133,15 +133,15 @@ const Section = () => {
           ,Which established these institutions 25 years ago to 
           <span className='font-extrabold text-blue-950'> promote technology-focused education in rural areas.</span> 
           These centers offers specialized undergraduate programs such as 
-          <span className='font-extrabold text-blue-950'> BBA, B.Sc Computer Science, Electronics, BCA and BCom. Commerce with Computer Applications</span>
+          <span className='font-extrabold text-blue-950'> B.Sc Computer Science and BCom. Commerce with Computer Applications</span>
           ,ensuring that students from remote locations have access to modern education and career opputunities. 
         </p>
         <button 
           ref={buttonRef}
           onClick={() => navigateTo('/about-us')} 
-          className='hover:bg-blue-900 cursor-pointer flex gap-2 mt-5 border px-25 py-3 rounded-3xl bg-blue-950 text-white items-center'
+          className='hover:bg-blue-900 cursor-pointer sm:text-lg text-sm  flex gap-2 mt-5 border px-25 py-3 rounded-3xl bg-blue-950 text-white items-center'
         >
-          LEARN <MoveRight size={16} />
+          LEARN MORE<MoveRight size={16} />
         </button>
       </div> 
     </div>
