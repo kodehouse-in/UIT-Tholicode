@@ -8,6 +8,7 @@ import ChatBot from '../components/ChatBot'
 import { usePage } from '../contexts/PageContext'
 import Footer from '../components/Footer'
 import Courses from '../components/Courses'
+import FacultyIntro from '../components/FacultyIntro'
 
 export default function Home() {
   const { page, setPage } = usePage();
@@ -29,6 +30,7 @@ export default function Home() {
         <Carousel />
         <Section />
         <Courses/>
+        <FacultyIntro/>
         <ChatBot />
         <Footer/>
       </div>

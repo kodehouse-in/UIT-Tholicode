@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { usePage } from "../contexts/PageContext";
 
 export default function AboutUs() {
-
+    
     const { page, setPage } = usePage();
     
     useEffect(() => {
