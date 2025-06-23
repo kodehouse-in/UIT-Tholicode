@@ -17,11 +17,11 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
     { label: 'HOME', value: '/' },
     { label: 'ABOUT US', value: '/about-us' },
     { label: 'ACADEMICS', value: 'academics' },
-    { label: 'FACULTIES', value: 'faculties' },
+    { label: 'FACULTIES', value: '/faculties' },
     { label: 'INFRASTRUCTURE', value: 'infrastructure' },
     { label: 'ADMISSION', value: 'admission' },
     { label: 'CAREERS', value: 'careers' },
-    { label: 'CONTACT US', value: 'contact' },
+    { label: 'CONTACT US', value: '/contact-us' },
   ];
 
   const handleNavigation = (item) => {
