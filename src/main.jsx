@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs';
 import { PageProvider } from './contexts/PageContext';
 import Faculties from './pages/Faculties';
 import ScrollToTop from './components/ScrollToTop';
+import ContactUs from './pages/ContactUs';
+import Academics from './pages/Academics';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +21,8 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={ <Home /> } />
         <Route path='about-us' element= { <AboutUs /> } />
         <Route path='faculties' element={ <Faculties /> } />
+        <Route path='contact-us' element={ <ContactUs /> } />
+        <Route path='academics' element={ <Academics /> } />
       </Routes>
       </PageProvider>
     </Router>

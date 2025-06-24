@@ -1,7 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { usePage } from '../contexts/PageContext';
 
 const FacultyIntro = () => {
+    const { page, setPage } = usePage();
     const navigateTo = useNavigate();
   return (
     <section className="relative bg-gradient-to-br from-indigo-50 via-white to-indigo-100 py-20 px-6 ">
@@ -25,8 +27,11 @@ const FacultyIntro = () => {
             </p>
 
             <button 
-                onClick={() => navigateTo('/Faculties')} 
-                className="mt-6 sm:px-6 px-18 py-3 bg-blue-950 text-white rounded-full shadow hover:bg-blue-900 transition duration-300"
+              onClick={() => {
+                navigateTo('/faculties');
+                setPage('/faculties');
+              }} 
+              className="mt-6 sm:px-6 px-18 py-3 bg-blue-950 text-white rounded-full shadow hover:bg-blue-900 transition duration-300"
             >
               Meet Our Team
             </button>

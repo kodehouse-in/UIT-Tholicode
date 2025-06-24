@@ -18,10 +18,6 @@ export default function Home() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  useEffect(() => {
-    setPage('/');
-  }, [page])
-
   return (
     <div className="relative">
       <div className="overflow-x-hidden">
