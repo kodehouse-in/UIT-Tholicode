@@ -99,16 +99,28 @@ export default function AboutUs() {
             <div className="bg-blue-50 p-6 rounded-xl shadow">
               <h3 className="text-xl font-semibold text-blue-800 mb-3">Our Vision</h3>
               <p className="text-gray-700">
-                There are many variations of passages of Lorem Ipsum available...
+                To be a center of excellence in computer science education, research, and innovation,
+empowering students to become leaders in technology-driven industries.
               </p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl shadow">
               <h3 className="text-xl font-semibold text-blue-800 mb-3">Our Mission</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>There are many variations of passages of Lorem Ipsum</li>
-                <li>There are many variations of passages of Lorem Ipsum</li>
-                <li>There are many variations of passages of Lorem Ipsum</li>
-                <li>There are many variations of passages of Lorem Ipsum</li>
+              <ul className="list-disc list-inside text-gray-700  space-y-2">
+                <li>
+                  To provide a strong foundation in computer science concepts and emerging
+                  technologies.
+                </li>
+                <li>
+                  To equip students with practical skills in programming, software development,
+                  and AIapplications.
+                </li>
+                <li>
+                  To promote research, innovation, and industry collaborations.
+                </li>
+                <li>
+                  Toprepare students for successfulcareers in IT,entrepreneurship, and higher
+                  education.
+                </li>
               </ul>
             </div>
           </div>
