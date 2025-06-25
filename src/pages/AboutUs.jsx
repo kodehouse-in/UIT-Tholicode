@@ -66,7 +66,29 @@ export default function AboutUs() {
           <div>
             <h2 className="text-3xl font-bold text-blue-900 mb-4">Who We Are</h2>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Contrary to popular belief, Lorem Ipsum is not simply random text... [lorem trimmed]
+              Located in the serene village of Tholicode (Pulimoodu) in Tholicode
+              in
+              a peaceful and nature
+              education
+              quality
+              is acenter of excellence dedicated to providing
+              campus offers students a
+              town, our
+              rich environment. Just 13 kilometers from Nedumangad
+              growth.
+              calm and inspiring atmosphere for academic and personal
+              goveraed by the Üniversity of Kerala
+              Our college is one of the 34 iearning centers
+              promote technology-focused
+              (UOK), which established these institutions 25 ycars ago to
+              programs such as
+              education in rural areas. These centers offer specialized undergraduate Commerce with
+              and B.Com.
+              BBA, B.Sc. Computer Science, B.Sc. Electronics, BCA,
+              access to modern
+              Computer Applications, ensuring that students from remote
+              locations have
+              education and career opportunities.
             </p>
           </div>
         </div>
@@ -74,20 +96,19 @@ export default function AboutUs() {
 
       <section className="py-20 px-6 bg-blue-50" ref={(el) => setRefs(el, 2)}>
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-blue-900 mb-12">What Makes Us Unique</h2>
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {["Strong Community Roots", "Student-Centered Learning", "Technology-Enabled Campus"].map((title, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-xl shadow hover:shadow-md"
-                ref={(el) => setRefs(el, i + 3)}
-              >
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">{title}</h3>
-                <p className="text-gray-700">
-                  There are many variations of passages of Lorem Ipsum available...
-                </p>
-              </div>
-            ))}
+          <h2 className="text-3xl font-bold text-blue-900 mb-12">Join Us</h2>
+          <div className="text-left">
+            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md">
+              <p>
+                We welcome students who aspire to learn, innovate, and grow in an institution that blends
+                knowledgewith nature. Come, be apart of our journey toward excellence!
+              </p>
+              <p>
+                Kur college has an active Career Guidance Cell dedicated to enpowering students with the
+                knowiedge and resources they need to build successful careers. The cell plays a crucial role in
+                guiding students toward higher education, skilldevelopment, and job opportunities by providing:
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -127,25 +148,60 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-blue-50" ref={(el) => setRefs(el, 7)}>
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-blue-900 mb-12">Academic Programs</h2>
-          <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">B.Sc. Computer Science</h3>
-              <p className="text-gray-700">
-                There are many variations of passages of Lorem Ipsum available...
+      <section className="py-24 px-6 bg-gradient-to-br from-blue-50 to-white" ref={(el) => setRefs(el, 7)}>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-blue-900 mb-16">Academic Programs</h2>
+
+          <div className="grid md:grid-cols-2 gap-10 text-left">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold text-blue-800 mb-4">B.Sc. Computer Science</h3>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                This program equips students with a solid foundation in computing, programming, and
+                problem-solving, tailored for the fast-paced IT industry.
               </p>
+
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold text-blue-700 mb-3">Course Highlights</h4>
+                <ul className="space-y-3 list-disc list-inside text-gray-700">
+                  <li>Core subjects: Programming, Data Structures, Algorithms, DBMS, Networks & Software Engineering.</li>
+                  <li>Hands-on with modern languages like Python, Java, and C++.</li>
+                  <li>Exposure to AI, ML, Cybersecurity, and Cloud Computing.</li>
+                  <li>Real-world training via projects, coding labs, and internships.</li>
+                  <li>Focus on logical thinking, analytical skills, and software development.</li>
+                </ul>
+              </div>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">B.Com with Computer Applications</h3>
-              <p className="text-gray-700">
-                There are many variations of passages of Lorem Ipsum available...
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-2xl font-semibold text-blue-800 mb-4">B.Com with Computer Applications</h3>
+              <p className="text-gray-700 leading-relaxed">
+                The B.Com. Finance with Minor in
+                Science program is designed to provide
+                students with a strong foundation in Computer
+                financial
+                management,
+                accounting, and businesSs
+                operations, along with essential computer science
+                skills. This unique combination prepares
+                students for careers in finance, banking,
+                fintech, and data-driven business
+                management
               </p>
+              <div className="mt-6">
+                <h4 className="text-lg font-semibold text-blue-700 mb-3">Course Highlights</h4>
+                <ul className="space-y-3 list-disc list-inside text-gray-700">
+                  <li>Core subjects in Accounting,Financial Management,Investment Analysis,and Taxation.</li>
+                  <li>Minor in Computer Science,covering Programming,Data Analytics and Financial Technology(FinTech)</li>
+                  <li>Hands-on training in business analytics,digital bnking and accounting software</li>
+                  <li>Practical exposure through internships,case studies and financial modeling</li>
+                  <li>Industry-relevant skills in data-driven decision-making and business automation</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <section className="py-20 px-6 bg-white" ref={(el) => setRefs(el, 8)}>
         <div className="max-w-6xl mx-auto">

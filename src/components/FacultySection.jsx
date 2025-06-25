@@ -73,30 +73,41 @@ const FacultySection = () => {
 
     return () => ctx.revert();
   }, []);
+  
 
   return (
-    <section ref={sectionRef} className="px-6 md:px-20 py-10 bg-gray-100">
-      <div className="max-w-screen-xl mx-auto">
-        <h2 className="sm:text-3xl text-4xl md:text-4xl font-bold text-center text-blue-900 mb-12">
-          Meet Our Faculties
-        </h2>
+    <>
+      <section ref={sectionRef} className="relative bg-gradient-to-r from-blue-950 to-indigo-950 text-white">
+        <div className="relative z-10 px-6 py-28 text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">About UIT Tholicode</h1>
+          <p className="text-lg max-w-3xl mx-auto">
+            There are many variations of passages of Lorem Ipsum available, but the majority.
+          </p>
+        </div>
+      </section>
+      <section ref={sectionRef} className="px-6 md:px-20 py-10 bg-gray-100">
+        <div className="max-w-screen-xl mx-auto">
+          <h2 className="sm:text-3xl text-4xl md:text-4xl font-bold text-center text-blue-900 mb-12">
+            Meet Our Faculties
+          </h2>
 
-        {Object.entries(faculties).map(([department, members]) => (
-          <div key={department} className="mb-16">
-            <div className="flex justify-center sm:justify-start">
-              <h3 className="faculty-title sm:text-2xl text-xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-500 inline-block">
-                {department}
-              </h3>
+          {Object.entries(faculties).map(([department, members]) => (
+            <div key={department} className="mb-16">
+              <div className="flex justify-center sm:justify-start">
+                <h3 className="faculty-title sm:text-2xl text-xl font-semibold text-gray-800 mb-6 border-b-2 border-blue-500 inline-block">
+                  {department}
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-6">
+                {members.map((faculty, idx) => (
+                  <FacultyCard key={idx} {...faculty} />
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-6">
-              {members.map((faculty, idx) => (
-                <FacultyCard key={idx} {...faculty} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
