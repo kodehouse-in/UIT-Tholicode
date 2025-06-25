@@ -77,7 +77,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
 
   return (
     <div>
-      {/* Desktop Navbar */}
       <div className="hidden lg:block px-4 md:px-30 py-2 w-screen h-auto bg-gradient-to-r from-blue-950 to-neutral-900">
         <ul className='flex justify-between text-white text-md font-semibold' ref={desktopNavRef}>
           {menuItems.map((item) => (
