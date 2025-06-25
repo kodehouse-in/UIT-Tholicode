@@ -9,28 +9,43 @@ import { usePage } from '../contexts/PageContext'
 import Footer from '../components/Footer'
 import Courses from '../components/Courses'
 import FacultyIntro from '../components/FacultyIntro'
+import AdModal from '../components/AdModal'
 
 export default function Home() {
   const { page, setPage } = usePage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showAdModal, setShowAdModal] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
+  useEffect(() => {
+    setShowAdModal(true);
+
+    // Show every 10 minutes
+    const interval = setInterval(() => {
+      setShowAdModal(true);
+    }, 10 * 60 * 1000); // 10 minutes
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="relative">
+      <AdModal isOpen={showAdModal} onClose={() => setShowAdModal(false)} />
+      
       <div className="overflow-x-hidden">
         <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <Carousel />
         <Section />
-        <Courses/>
-        <FacultyIntro/>
+        <Courses />
+        <FacultyIntro />
         <ChatBot />
-        <Footer/>
+        <Footer />
       </div>
-      
+
       <a
         href="https://wa.me/919074311597" 
         target="_blank"

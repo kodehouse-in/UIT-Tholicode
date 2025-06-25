@@ -2,18 +2,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Bot, X } from 'lucide-react';
 
 export default function ChatBot() {
-  const [showModal, setShowModal] = useState(false);
+  const [isMounted, setIsMounted] = useState(false); // For mounting/unmounting
+  const [isVisible, setIsVisible] = useState(false); // For animation
   const [messages, setMessages] = useState([
     { from: 'bot', text: 'Hi! How can I help you?' }
   ]);
   const [input, setInput] = useState('');
   const [botHi, setBotHi] = useState('');
-  const messagesEndRef = useRef(null);
-  const modalRef = useRef(null);
   const [isTyping, setIsTyping] = useState(false);
+  const modalRef = useRef(null);
+  const messagesEndRef = useRef(null);
   const inactivityTimer = useRef(null);
 
-  // Bouncing "👋 Hi" effect
+  // Floating bot icon waving
   useEffect(() => {
     const interval = setInterval(() => {
       setBotHi('👋 Hi there!');
@@ -22,7 +23,7 @@ export default function ChatBot() {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll to bottom on new messages
+  // Scroll to latest message
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -30,20 +31,18 @@ export default function ChatBot() {
   }, [messages, isTyping]);
 
 
-  // Detect outside click to close modal
+  // Outside click detection
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (modalRef.current && !modalRef.current.contains(e.target)) {
-        setShowModal(false);
+        handleClose();
       }
     };
-    if (showModal) {
+    if (isMounted) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [showModal]);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMounted]);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -80,12 +79,22 @@ export default function ChatBot() {
     }, 1000);
   };
 
+  const handleOpen = () => {
+    setIsMounted(true);
+    setTimeout(() => setIsVisible(true), 50);
+  };
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => setIsMounted(false), 300); // match animation duration
+  };
+
   return (
     <>
       {/* Floating Button */}
       <div
         className="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 p-3 rounded-full cursor-pointer shadow-lg animate-slow-bounce"
-        onMouseEnter={() => setShowModal(true)}
+        onMouseEnter={handleOpen}
       >
         <Bot className="text-white" />
         {botHi && (
@@ -96,15 +105,17 @@ export default function ChatBot() {
       </div>
 
       {/* Chat Modal */}
-      {showModal && (
+      {isMounted && (
         <div
           ref={modalRef}
-          className="fixed sm:bottom-20 bottom-24 sm:right-6 right-6 sm:w-96 w-80 h-[450px] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden z-50"
+          className={`fixed sm:bottom-20 bottom-24 sm:right-6 right-6 sm:w-96 w-80 h-[450px] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden z-50 transform transition-all duration-300 ease-in-out ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90 pointer-events-none'
+          }`}
         >
           {/* Header */}
           <div className="flex justify-between items-center bg-green-500 text-white p-3 rounded-t-xl">
             <span className="font-semibold">ChatBot</span>
-            <button onClick={() => setShowModal(false)}>
+            <button onClick={handleClose}>
               <X className="w-4 h-4 cursor-pointer" />
             </button>
           </div>
@@ -160,7 +171,7 @@ export default function ChatBot() {
         </div>
       )}
 
-      {/* Custom slow bounce animation */}
+      {/* Custom bounce animation */}
       <style>{`
         @keyframes slow-bounce {
           0%, 100% { transform: translateY(0); }
