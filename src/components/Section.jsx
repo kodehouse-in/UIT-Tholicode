@@ -122,7 +122,7 @@ const Section = () => {
   // <span className='font-extrabold text-blue-950'></span>
   return (
     <div ref={containerRef}>
-      <div className="flex flex-col justify-center items-center max-w-3xl sm:px-15 px-8 py-10 ml-20">
+      <div className="flex flex-col justify-center items-center max-w-3xl sm:px-15 px-8 py-10 sm:ml-20">
         <p ref={titleRef} className='sm:text-[30px] text-xl sm:font-bold font-extrabold font-serif text-[#6E260E]'>
           A FEW WORDS ABOUT US....
         </p>

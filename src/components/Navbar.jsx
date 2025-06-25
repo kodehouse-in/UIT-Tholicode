@@ -93,7 +93,6 @@ const Navbar = ({ isMenuOpen, toggleMenu }) => {
         </ul>
       </div>
 
-      {/* Mobile Navbar */}
       {isMenuOpen && (
         <div
           ref={mobileMenuRef}

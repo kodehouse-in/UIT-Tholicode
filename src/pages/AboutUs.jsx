@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,8 +11,13 @@ import { FaWhatsapp } from 'react-icons/fa'
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutUs() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { setPage } = usePage();
   const sectionsRef = useRef([]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
 
   useEffect(() => {
     setPage("/about-us");
@@ -42,8 +47,8 @@ export default function AboutUs() {
   return (
     <div className="">
       <div className="overflow-x-hidden">
-      <Header />
-      <Navbar />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
       <section className="relative bg-gradient-to-r from-blue-950 to-indigo-950 text-white" ref={(el) => setRefs(el, 0)}>
         <div className="relative z-10 px-6 py-28 text-center">

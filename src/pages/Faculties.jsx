@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import FacultySection from '../components/FacultySection'
@@ -7,11 +7,17 @@ import ChatBot from '../components/ChatBot'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const Faculties = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
     <div className="relative">
       <div className="overflow-x-hidden">
-        <Header />
-        <Navbar />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <FacultySection />
         <ChatBot />
         <Footer />
