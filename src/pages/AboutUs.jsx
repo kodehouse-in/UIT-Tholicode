@@ -94,20 +94,66 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-blue-50" ref={(el) => setRefs(el, 2)}>
+      <section className="py-24 px-6 bg-blue-50" ref={(el) => setRefs(el, 2)}>
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-blue-900 mb-12">Join Us</h2>
+          <h2 className="text-4xl font-bold text-blue-900 mb-14">Why Join Us?</h2>
+
           <div className="text-left">
-            <div className="bg-white p-6 rounded-xl shadow hover:shadow-md">
-              <p>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 space-y-8">
+              
+              <p className="text-gray-700 text-lg leading-relaxed">
                 We welcome students who aspire to learn, innovate, and grow in an institution that blends
-                knowledgewith nature. Come, be apart of our journey toward excellence!
+                knowledge with nature. Come, be a part of our journey toward excellence!
               </p>
-              <p>
-                Kur college has an active Career Guidance Cell dedicated to enpowering students with the
-                knowiedge and resources they need to build successful careers. The cell plays a crucial role in
-                guiding students toward higher education, skilldevelopment, and job opportunities by providing:
-              </p>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Career Guidance Cell</h3>
+                <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                  Our college has an active <span className="font-semibold">Career Guidance Cell</span> dedicated to empowering students with
+                  the knowledge and resources they need to build successful careers. It plays a vital role in guiding
+                  students toward higher education, skill development, and job opportunities through:
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-3">
+                  <li><span className="font-medium text-blue-800">Career Counseling & Mentorship:</span> One-on-one guidance for identifying suitable career paths.</li>
+                  <li><span className="font-medium text-blue-800">Workshops & Seminars:</span> Expert-led sessions to broaden awareness.</li>
+                  <li><span className="font-medium text-blue-800">Placement Assistance:</span> Internship/job support and campus drives.</li>
+                  <li><span className="font-medium text-blue-800">Higher Education Support:</span> Help with exams, applications, and scholarships.</li>
+                  <li><span className="font-medium text-blue-800">Skill Development:</span> Resume writing, interview prep, soft and technical skills training.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Facilities & Infrastructure</h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-3">
+                  <li>Modern computer labs with high-performance systems and fast internet.</li>
+                  <li>Advanced software tools: Python, Java, TensorFlow, SQL, cloud platforms.</li>
+                  <li>Smart classrooms equipped with interactive learning technologies.</li>
+                  <li>Digital library and online learning portals for research and academics.</li>
+                  <li>Innovation & research labs for AI, ML, and software project development.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Research & Industry Collaborations</h3>
+                <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                  The department actively promotes research, hackathons, and internships to enhance practical
+                  knowledge. Faculty members contribute to international conferences and computer science advancements.
+                </p>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  We collaborate with top IT firms, research institutions, and startups to provide students with
+                  real-world training and industry experience.
+                </p>
+              </div>
+        
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Activities & Events</h3>
+                <ul className="list-disc list-inside text-gray-700 space-y-3">
+                  <li>Workshops on AI, cybersecurity, web development, and data science.</li>
+                  <li>Guest lectures by industry professionals and alumni.</li>
+                  <li>Hackathons and coding competitions to boost problem-solving skills.</li>
+                  <li>Internship and placement training for career readiness.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
