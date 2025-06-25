@@ -100,7 +100,7 @@ export default function AboutUs() {
               <h3 className="text-xl font-semibold text-blue-800 mb-3">Our Vision</h3>
               <p className="text-gray-700">
                 To be a center of excellence in computer science education, research, and innovation,
-empowering students to become leaders in technology-driven industries.
+                empowering students to become leaders in technology-driven industries.
               </p>
             </div>
             <div className="bg-blue-50 p-6 rounded-xl shadow">
