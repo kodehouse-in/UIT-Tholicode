@@ -148,7 +148,6 @@ const Section = () => {
           LEARN MORE<MoveRight size={16} />
         </button>
       </div> 
-      <hr className='rotate-90 w-100 absolute left-[40vw] top-[97vh] border-blue-950'/>
     </div>
   )
 }

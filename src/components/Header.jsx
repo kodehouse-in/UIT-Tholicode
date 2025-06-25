@@ -19,11 +19,10 @@ const Header = ({ isMenuOpen, toggleMenu }) => {
         });
 
         tl.fromTo(logoRef.current,
-          { opacity: 0, scale: 0, rotation: -180 },
+          { opacity: 0, scale: 0 },
           {
             opacity: 1,
             scale: 1,
-            rotation: 0,
             duration: 1,
             ease: "back.out(1.7)"
           }
