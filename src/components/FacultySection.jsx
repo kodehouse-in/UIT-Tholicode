@@ -104,19 +104,17 @@ const FacultySection = () => {
       <section className="relative bg-gradient-to-r from-blue-950 to-indigo-950 text-white">
         <div className="relative z-10 px-6 py-28 text-center">
           <h1 ref={headingRef} className="text-4xl sm:text-5xl font-bold mb-4">
-            About UIT Tholicode
+            Meet Our Faculty
           </h1>
           <p ref={paraRef} className="text-lg max-w-3xl mx-auto">
-            There are many variations of passages of Lorem Ipsum available, but the majority.
+            Our faculty members are highly qualified and dedicated to providing high-quality
+            education, mentorship, and research guidance.
           </p>
         </div>
       </section>
 
       <section ref={sectionRef} className="px-6 md:px-20 py-10 bg-gray-100">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="sm:text-3xl text-4xl md:text-4xl font-bold text-center text-blue-900 mb-12">
-            Meet Our Faculties
-          </h2>
 
           {Object.entries(faculties).map(([department, members]) => (
             <div key={department} className="mb-16">

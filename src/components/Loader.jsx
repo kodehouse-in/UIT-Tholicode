@@ -25,7 +25,7 @@ const StyledWrapper = styled.div`
   .loader-wrapper {
     position: fixed;
     inset: 0;
-    background: #080808; /* Dark blue background */
+    background: #181818; /* Dark blue background */
     z-index: 9999;
     display: flex;
     align-items: center;
