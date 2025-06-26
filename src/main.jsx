@@ -10,7 +10,7 @@ import ContactUs from './pages/ContactUs';
 import Academics from './pages/Academics';
 import { PageProvider } from './contexts/PageContext';
 import ScrollToTop from './components/ScrollToTop';
-import LoaderWrapper from './components/LoaderWrapper'; // ✅ import the wrapper
+import LoaderWrapper from './components/LoaderWrapper';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

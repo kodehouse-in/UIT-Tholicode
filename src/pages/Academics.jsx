@@ -11,6 +11,7 @@ export default function Academics() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const contentRef = useRef(null);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setPage("/academics");
@@ -42,8 +43,8 @@ export default function Academics() {
 
   return (
     <div>
-      <Header />
-      <Navbar />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} setMenuOpen={setMenuOpen} />
       <section
         ref={sectionRef}
         className="bg-gradient-to-bl from-white to-indigo-50 py-16 px-6 min-h-screen"

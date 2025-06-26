@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import ContactSection from '../components/ContactSection'
 
 const ContactUs = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -14,8 +14,8 @@ const ContactUs = () => {
   return (
     <div>
       <div className="overflow-x-hidden">
-        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} setMenuOpen={setMenuOpen} />
         <ContactSection/>
         <Footer/>
       </div>

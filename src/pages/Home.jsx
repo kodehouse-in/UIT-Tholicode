@@ -13,7 +13,7 @@ import AdModal from '../components/AdModal'
 
 export default function Home() {
   const { page, setPage } = usePage();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const [showAdModal, setShowAdModal] = useState(false);
 
   const toggleMenu = () => {
@@ -36,8 +36,8 @@ export default function Home() {
       <AdModal isOpen={showAdModal} onClose={() => setShowAdModal(false)} />
       
       <div className="overflow-x-hidden">
-        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} setMenuOpen={setMenuOpen} />
         <Carousel />
         <Section />
         <Courses />

@@ -7,7 +7,7 @@ import ChatBot from '../components/ChatBot'
 import { FaWhatsapp } from 'react-icons/fa'
 
 const Faculties = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,8 +16,8 @@ const Faculties = () => {
   return (
     <div className="relative">
       <div className="overflow-x-hidden">
-        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <Navbar isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <Header isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} />
+        <Navbar isMenuOpen={isMenuOpen} toggleMenu={() => setMenuOpen((prev) => !prev)} setMenuOpen={setMenuOpen} />
         <FacultySection />
         <ChatBot />
         <Footer />
