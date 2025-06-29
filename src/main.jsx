@@ -8,9 +8,12 @@ import AboutUs from './pages/AboutUs';
 import Faculties from './pages/Faculties';
 import ContactUs from './pages/ContactUs';
 import Academics from './pages/Academics';
+import Infrastructure from './pages/Infrastructure';
 import { PageProvider } from './contexts/PageContext';
 import ScrollToTop from './components/ScrollToTop';
 import LoaderWrapper from './components/LoaderWrapper';
+import Careers from './pages/Careers';
+import FYUGP from './pages/FYUGP';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -24,6 +27,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="faculties" element={<LoaderWrapper><Faculties /></LoaderWrapper>} />
           <Route path="contact-us" element={<LoaderWrapper><ContactUs /></LoaderWrapper>} />
           <Route path="academics" element={<LoaderWrapper><Academics /></LoaderWrapper>} />
+          <Route path="infrastructure" element={<LoaderWrapper><Infrastructure /></LoaderWrapper>} />
+          <Route path="careers" element={<LoaderWrapper><Careers /></LoaderWrapper>} />
+          <Route path="fyugp" element={<LoaderWrapper><FYUGP /></LoaderWrapper>} />
         </Routes>
       </PageProvider>
     </Router>

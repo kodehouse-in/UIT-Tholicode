@@ -12,12 +12,11 @@ const AcademicSection = () => {
             <h1 className="sm:text-6xl text-4xl md:text-7xl font-semibold mb-6 tracking-tight">
               ACADEMICS
             </h1>
-            
           </div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 mt-10 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 mt-10 relative ">
         <section className="bg-white rounded-2xl shadow-2xl p-12 mb-16 border border-gray-100">
           
           <div className="grid md:grid-cols-2 gap-12">

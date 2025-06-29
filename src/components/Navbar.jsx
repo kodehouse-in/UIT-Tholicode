@@ -21,6 +21,7 @@ const Navbar = ({ isMenuOpen, toggleMenu, setMenuOpen }) => {
     { label: 'INFRASTRUCTURE', value: '/infrastructure' },
     { label: 'ADMISSION', value: '/admission' },
     { label: 'CAREERS', value: '/careers' },
+    { label: 'FYUGP', value: '/fyugp' },
     { label: 'CONTACT US', value: '/contact-us' },
   ];
 
@@ -32,12 +33,10 @@ const Navbar = ({ isMenuOpen, toggleMenu, setMenuOpen }) => {
     navigateTo(item.value);
   };
 
-  // 🧠 Auto-close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  // 🧠 Animate desktop nav on mount
   useEffect(() => {
     if (desktopNavRef.current) {
       gsap.fromTo(
@@ -48,7 +47,6 @@ const Navbar = ({ isMenuOpen, toggleMenu, setMenuOpen }) => {
     }
   }, []);
 
-  // 🧠 Animate mobile menu open/close
   useEffect(() => {
     if (mobileMenuRef.current && mobileMenuContentRef.current) {
       const tl = gsap.timeline({ paused: true });
