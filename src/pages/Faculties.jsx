@@ -24,7 +24,7 @@ const Faculties = () => {
       </div>
 
       <a
-        href="https://wa.me/919074311597"
+        href="https://wa.me/919946667727"
         target="_blank"
         className="fixed bottom-5 left-5 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg"
       >

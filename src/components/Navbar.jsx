@@ -125,7 +125,7 @@ const Navbar = ({ isMenuOpen, toggleMenu, setMenuOpen }) => {
                   <div className="border-2 border-red-500 rounded-full p-1">
                     <Phone className="text-red-500 size-4" />
                   </div>
-                  <p className="text-sm text-gray-700">+99 9999999999</p>
+                  <p className="text-sm text-gray-700">0472 2878944</p>
                 </div>
               </div>
             </div>

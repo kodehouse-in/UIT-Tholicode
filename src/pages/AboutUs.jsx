@@ -52,7 +52,7 @@ export default function AboutUs() {
 
       <section className="relative bg-gradient-to-r from-blue-950 to-indigo-950 text-white" ref={(el) => setRefs(el, 0)}>
         <div className="relative z-10 px-6 py-28 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">About UIT Tholicode</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">ABOUT US</h1>
           <p className="text-lg max-w-3xl mx-auto">
             There are many variations of passages of Lorem Ipsum available, but the majority.
           </p>
@@ -70,7 +70,7 @@ export default function AboutUs() {
           </div>
           <div>
             <h2 className="text-3xl font-bold text-blue-900 mb-4">Who We Are</h2>
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-lg text-justify leading-relaxed">
               Located in the serene village of Tholicode (Pulimoodu) in Tholicode
               in
               a peaceful and nature
@@ -83,9 +83,9 @@ export default function AboutUs() {
               growth.
               calm and inspiring atmosphere for academic and personal
               goveraed by the Üniversity of Kerala
-              Our college is one of the 34 iearning centers
+              Our college is one of the 30 iearning centers
               promote technology-focused
-              (UOK), which established these institutions 25 ycars ago to
+              (UOK), which established these institutions 25 years ago to
               programs such as
               education in rural areas. These centers offer specialized undergraduate Commerce with
               and B.Com.
@@ -274,7 +274,7 @@ export default function AboutUs() {
       <Footer />
     </div>
     <a
-      href="https://wa.me/919074311597"
+      href="https://wa.me/919946667727"
       target="_blank"
       className="fixed bottom-5 left-5 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg"
     >

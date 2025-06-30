@@ -6,14 +6,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const faculties = {
   'Department of Computer Science': [
-    { name: 'Athira R S', role: 'Head of Department', photo: '/images/athira.jfif' },
+    { name: 'Athira R S', role: 'Head of the Department', photo: '/images/athira.jfif' },
     { name: 'Muhammed Roshan A', role: 'Assistant Professor', photo: '/images/roshan.png' },
     { name: 'Remya S Das', role: 'Assistant Professor', photo: '/images/remya.jfif' },
     { name: 'Rakhi Gopan R', role: 'Assistant Professor', photo: '/images/rakhi.jfif' },
     { name: 'Lekshmi P', role: 'Lab Instructor', photo: '/images/lekshmi.jfif' },
   ],
   'Department of Commerce': [
-    { name: 'Chandralekha K S', role: 'Head of Department', photo: '/images/principal.png' },
+    { name: 'Chandralekha K S', role: 'Head of the Department', photo: '/images/principal.png' },
     { name: 'Reeja Vijayan', role: 'Assistant Professor', photo: '/images/reeja.jfif' },
     { name: 'Shani Raj D', role: 'Assistant Professor', photo: '/images/shani.png' },
     { name: 'Sujitha I S', role: 'Assistant Professor', photo: '/images/sujitha.png' },

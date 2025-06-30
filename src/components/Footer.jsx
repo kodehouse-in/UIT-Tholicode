@@ -21,7 +21,7 @@ const Footer = () => {
           <div className="sm:mt-0 mt-4 flex flex-col sm:items-start items-center sm:justify-start justify-center">
               <p className='font-bold text-xl'>CONTACT</p>
               <p className='mt-3 font-extralight text-lg'>Email : uittholicode@gmail.com</p>
-              <p className='font-extralight text-lg'>Phone : +91 9999999999</p>
+              <p className='font-extralight text-lg'>Phone : 0472 2878944</p>
               <p className='font-extralight text-lg'>Location : Kerala,India</p>
               <div className="flex mt-4 gap-2">
                   <IoLogoWhatsapp className='text-3xl rounded-full hover:bg-white border-none hover:text-green-500'/>
