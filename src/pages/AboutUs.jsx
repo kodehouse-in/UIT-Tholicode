@@ -54,7 +54,7 @@ export default function AboutUs() {
         <div className="relative z-10 px-6 py-28 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">ABOUT US</h1>
           <p className="text-lg max-w-3xl mx-auto">
-            There are many variations of passages of Lorem Ipsum available, but the majority.
+            A serene hub of excellence blending education with nature.
           </p>
         </div>
       </section>
@@ -258,10 +258,10 @@ export default function AboutUs() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-blue-900 text-center mb-10">Campus Life</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {["students", "Tour", "sports"].map((img, i) => (
+            {["ceremony","awards","notClear","ok","Recieve","selfie","sports","white","Red"].map((img, i) => (
               <img
                 key={i}
-                src={`/images/${img}.avif`}
+                src={`/Gallery/${img}.jpg`}
                 alt={`Gallery ${i + 1}`}
                 className="w-full h-64 object-cover rounded-lg shadow-md"
                 ref={(el) => setRefs(el, 9 + i)}

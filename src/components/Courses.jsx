@@ -6,13 +6,13 @@ const Courses = () => {
   const courseData = [
     {
       title: 'B.Sc Computer Science (AI & ML)',
-      image: '/images/Bsc.png',
+      image: '/students/Bsc.png',
       description:
         'A solid foundation in computer science with a focus on Artificial Intelligence and Machine Learning. Learn to build smart systems and solve real-world problems.',
     },
     {
       title: 'B.Com Commerce',
-      image: '/images/BCOM.jpg',
+      image: '/students/Bcom.png',
       description:
         'Gain a deep understanding of business principles, financial management, and marketing strategies for a successful career in commerce.',
     },
